@@ -11,11 +11,10 @@ const selectedUser = ref<User | null>(null);
 
 const showDetail = (user: User) => {
     selectedUser.value = user;
-    console.log(user)
 };
 const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString();
+    const date = new Date(dateString);
+    return date.toLocaleDateString();
 };
 
 </script>
@@ -34,9 +33,9 @@ const formatDate = (dateString: string): string => {
         </div>
         <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
             <p class="text-sm leading-6 text-gray-900">{{ user.gender }}</p>
-            <p class="mt-1 text-xs leading-5 text-gray-500">Birthday <time >{{ formatDate(user.dob.date) }}</time></p>
+            <p class="mt-1 text-xs leading-5 text-gray-500">Birthday <time>{{ formatDate(user.dob.date) }}</time></p>
         </div>
-        
+
     </li>
 
 </template>

@@ -5,10 +5,6 @@ import { User } from "../models/user.model";
 import UserModal from './UserModal.vue'
 import formatDate from '../utils/format'
 
-/* interface Props {
-    users: User[];
-} */
-
 const users = ref<User[]>([]);
 
 const selectedUser = ref<User | null>(null);
@@ -18,27 +14,22 @@ const fetchUsers = async () => {
     try {
         const { data } = await axiosClient.get("?results=5&noinfo");
         users.value = data.results;
-        // console.log(data.results[0])
 
     } catch (error) {
-        console.log('Error fetching users:', error);
+        console.error('Error fetching users:', error);
     }
 };
 const showDetail = (user: User) => {
     selectedUser.value = user;
     isModalOpen.value = true;
-    console.log(user)
-    console.log(isModalOpen.value)
 
 };
 const closeModal = () => {
     selectedUser.value = null;
 };
 
-
 onMounted(fetchUsers);
 
-//defineProps<Props>();
 </script>
 
 <template>
