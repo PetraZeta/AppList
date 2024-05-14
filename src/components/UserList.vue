@@ -27,13 +27,16 @@ const showDetail = (user: User) => {
 const closeModal = () => {
     selectedUser.value = null;
 };
-
+const refreshUsers = () => {
+      fetchUsers(); 
+    };
 onMounted(fetchUsers);
 
 </script>
 
 <template>
     <section class="container mx-auto rounded-md shadow-md">
+       
         <ul role="list" class="divide-y divide-gray-100 px-5">
             <li v-for="user in users" :key="user.login.uuid" @click="showDetail(user)"
                 class="flex justify-between gap-x-6 py-5 cursor-pointer">
@@ -54,9 +57,11 @@ onMounted(fetchUsers);
 
             </li>
         </ul>
-
+        
     </section>
-
+    <div class="flex ">
+        <button  class="text-gray-600 bg-slate-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 my-2 text-sm font-medium" @click="refreshUsers">Refrescar Usuarios</button>
+    </div>
     <UserModal :user="selectedUser" v-if="selectedUser !== null" :onClose="closeModal" />
 
 </template>

@@ -1,7 +1,7 @@
 <template>
   <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
+      <div class="flex flex-col md:flex-row py-3 items-center justify-between">
         <div>
           <a href="https://www.linkedin.com/in/ines-garcia-zapata-0b64b3175/"
             class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">LinkedIn</a>
